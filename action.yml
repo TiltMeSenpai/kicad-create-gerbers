@@ -1,0 +1,8 @@
+# action.yml
+name: "Nightly Plot Gerbers"
+description: "Plot Kicad Gerber files with Kicad Nightly"
+inputs:
+  pcb-file:
+    description: "Kicad PCB File to plot"
+    required: true
+
