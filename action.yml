@@ -6,3 +6,8 @@ inputs:
     description: "Kicad PCB File to plot"
     required: true
 
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{inputs.pcb-file}}
