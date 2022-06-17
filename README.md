@@ -1,7 +1,6 @@
-# kicad-nightly-create-gerbers
+# kicad-create-gerbers
 
 Experimental Github Action to plot Kicad PCB files
-This uses the Kicad Nightly build and **WILL** break often.
 
 ## Inputs
 ### `pcb-file`
@@ -9,6 +8,8 @@ This uses the Kicad Nightly build and **WILL** break often.
 
 ## Example usage
 
+```
 uses: TiltMeSenpai/kicad-nightly-create-gerbers
 with:
   pcb-file: my-project.kicad_pcb
+```
