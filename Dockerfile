@@ -11,8 +11,6 @@ RUN apt update && DEBIAN_FRONTEND=noninteractive apt install -yq software-proper
 COPY kicadScripts/plot_gerbers.py /usr/bin/plot_gerbers.py
 RUN  chmod +x /usr/bin/plot_gerbers.py
 # Set up environment variables to allow python to access kicad-nightly
-ENV LD_LIBRARY_PATH "/usr/lib/kicad-nightly/lib/x86_64-linux-gnu/:$LD_LIBRARY_PATH"
-ENV PYTHONPATH      "/usr/lib/kicad-nightly/lib/python3/dist-packages/:$PYTHONPATH"
 
 # Do the frequently rotating things last
 RUN add-apt-repository --yes ppa:kicad/kicad-6.0-releases && apt update \
