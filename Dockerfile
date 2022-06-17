@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
 # This is done because hub and software-properties-common should be *relatively* stable
 # However, kicad-nightly changes... well, nightly. This allows docker builds that can
