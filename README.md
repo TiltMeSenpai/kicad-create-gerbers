@@ -9,6 +9,8 @@ This uses the Kicad Nightly build and **WILL** break often.
 
 ## Example usage
 
+```
 uses: TiltMeSenpai/kicad-nightly-create-gerbers
 with:
   pcb-file: my-project.kicad_pcb
+```
