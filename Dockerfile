@@ -15,8 +15,8 @@ ENV LD_LIBRARY_PATH "/usr/lib/kicad-nightly/lib/x86_64-linux-gnu/:$LD_LIBRARY_PA
 ENV PYTHONPATH      "/usr/lib/kicad-nightly/lib/python3/dist-packages/:$PYTHONPATH"
 
 # Do the frequently rotating things last
-RUN add-apt-repository --yes ppa:kicad/kicad-dev-nightly && apt update \
-    && DEBIAN_FRONTEND=noninteractive apt install -yq kicad-nightly \
+RUN add-apt-repository --yes ppa:kicad/kicad-6.0-releases && apt update \
+    && DEBIAN_FRONTEND=noninteractive apt install -yq kicad \
     && rm -rf /var/lib/apt/lists/* # remove the cached files.
 
 COPY entrypoint.sh /entrypoint.sh
