@@ -1,0 +1,3 @@
+[submodule "kicadScripts"]
+	path = kicadScripts
+	url = https://github.com/TiltMeSenpai/kicadScripts.git
