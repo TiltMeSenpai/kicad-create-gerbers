@@ -38,7 +38,7 @@ from shutil import copy
 
 
 filename = os.environ.get("PCB_PATH",    sys.argv[1])
-git_rev  = os.environ.get("PCB_VERSION", sys.argv.get(2, "REVISION_UNKNOWN"))
+git_rev  = os.environ.get("PCB_VERSION", sys.argv[2])
 
 print(f"Plotting {filename} with revision {git_rev}")
 
