@@ -80,7 +80,7 @@ popt.SetPlotInvisibleText(False)
 popt.SetSubtractMaskFromSilk(True) #remove solder mask from silk to be sure there is no silk on pads
 
 for module in board.GetDrawings():
-    if(isinstance(module, pcbnew.TEXTE_PCB)):
+    if(isinstance(module, pcbnew.PCB_TEXT_T)):
         if "${GIT_REV}" in module.GetText():
             module.SetText(module.GetText().replace("${GIT_REV}", git_rev))
             print(f"Git Revision Replaced: {git_rev}")
