@@ -8,15 +8,15 @@ RUN apt update && DEBIAN_FRONTEND=noninteractive apt install -yq software-proper
     && rm -rf /var/lib/apt/lists/* # remove the cached files.
 
 # Copy gerber build scripts
-COPY kicadScripts/plot_gerbers.py /usr/bin/plot_gerbers.py
+COPY plot.py /usr/bin/plot_gerbers.py
 RUN  chmod +x /usr/bin/plot_gerbers.py
 # Set up environment variables to allow python to access kicad-nightly
-ENV LD_LIBRARY_PATH "/usr/lib/kicad-nightly/lib/x86_64-linux-gnu/:$LD_LIBRARY_PATH"
-ENV PYTHONPATH      "/usr/lib/kicad-nightly/lib/python3/dist-packages/:$PYTHONPATH"
+ENV LD_LIBRARY_PATH "/usr/lib/kicad/lib/x86_64-linux-gnu/:$LD_LIBRARY_PATH"
+ENV PYTHONPATH      "/usr/lib/kicad/lib/python3/dist-packages/:$PYTHONPATH"
 
 # Do the frequently rotating things last
-RUN add-apt-repository --yes ppa:kicad/kicad-dev-nightly && apt update \
-    && DEBIAN_FRONTEND=noninteractive apt install -yq kicad-nightly \
+RUN add-apt-repository --yes ppa:kicad/kicad-7.0-releases && apt update \
+    && DEBIAN_FRONTEND=noninteractive apt install -yq kicad \
     && rm -rf /var/lib/apt/lists/* # remove the cached files.
 
 COPY entrypoint.sh /entrypoint.sh
