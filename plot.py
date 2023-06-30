@@ -98,7 +98,7 @@ plot_plan = [
 ]
 
 popt.SetMirror(False)
-popt.SetDrillMarksType(PCB_PLOT_PARAMS.NO_DRILL_SHAPE)
+popt.SetDrillMarksType(DRILL_MARKS_NO_DRILL_SHAPE)
 print("Plotting Gerber Layers:")
 
 fab_files = []
