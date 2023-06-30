@@ -39,6 +39,9 @@ from shutil import copy
 
 filename = os.environ.get("PCB_PATH",    sys.argv[1])
 git_rev  = os.environ.get("PCB_VERSION", sys.argv[2])
+
+print(f"Plotting {filename} with revision {git_rev}")
+
 project_name = os.path.splitext(os.path.split(filename)[1])[0]
 project_path = os.path.abspath(os.path.split(filename)[0])
 
