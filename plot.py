@@ -141,7 +141,7 @@ if popt.GetUseAuxOrigin():
     def aux_origin_missing():
         popt.SetUseAuxOrigin(False)
         return wxPoint(0, 0)
-    offset = getattr(board, "GetAuxOrigin", aux_origin_missing)()
+    offset = board.GetDesignSettings().GetAuxOrigin()
 else:
     offset = wxPoint(0,0)
 
