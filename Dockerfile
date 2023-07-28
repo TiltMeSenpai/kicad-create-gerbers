@@ -16,7 +16,7 @@ ENV PYTHONPATH      "/usr/lib/kicad/lib/python3/dist-packages/:$PYTHONPATH"
 
 # Do the frequently rotating things last
 RUN add-apt-repository --yes ppa:kicad/kicad-7.0-releases && apt update \
-    && DEBIAN_FRONTEND=noninteractive apt install -yq kicad -kicad-footprints kicad-packages3d- kicad-libraries- \
+    && DEBIAN_FRONTEND=noninteractive apt install -yq kicad kicad-footprints- kicad-packages3d- kicad-libraries- \
     && rm -rf /var/lib/apt/lists/* # remove the cached files.
 
 COPY entrypoint.sh /entrypoint.sh
